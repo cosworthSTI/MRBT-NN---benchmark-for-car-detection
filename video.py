@@ -10,14 +10,9 @@ except:
 	print('Err[1]: import err')
 
 #directory managing
-folder = 'road_2s_28f'
+folder = 'road_2s_28f_small'
 directory = './datasets/MRBT_DATASET/'+folder+'_out'
 
-try:
-	os.stat(directory)
-except:
-	os.mkdir(directory)
-	print('creating output directory: '+folder+'_out')
 
 try:
 	os.stat('./datasets/datalog.txt')
