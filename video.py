@@ -52,6 +52,7 @@ if Zadany_subor != 'video.py':
 
 if Zadany_subor == 'video.py':
 	start_time = time.time()
+	start_time_total = start_time
 	data = os.listdir('./datasets/MRBT_DATASET/'+folder)
 	data =  np.asarray(data)
 	fp= open('./datasets/datalog.txt','a') 
@@ -64,7 +65,7 @@ if Zadany_subor == 'video.py':
 		shutil.move('./predictions.png','./datasets/'+tmp+'.png')
 		fp.write(str(time.time()-start_time)+'\n')
 		start_time = time.time()
-	print('Done in ', np.around(time.time()-start_time) , 's, with average pic Time', np.around((time.time()-start_time)/len(data)), 's!')	
+	print('Done in ', np.around(time.time()-start_time_total) , 's, with average pic Time', np.around((time.time()-start_time_total)/len(data)), 's!')	
 	fp.write('\n')	
 	fp.close()
 
